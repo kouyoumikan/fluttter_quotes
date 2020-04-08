@@ -12,7 +12,7 @@ class QuoteList extends StatefulWidget {
 class _QuoteListState extends State<QuoteList> {
 
   List<String> quotes = [
-    "qwertyyyyyyuioo",
+    "qwertyuioo",
     "asdfghjjkll",
     "zxcvbnm"
   ];
@@ -27,9 +27,7 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((quote) { // マップを表示
-          return Text(quote);
-        }).toList(),
+        children: quotes.map((quote) => Text(quote)).toList(),
       ),
     );
   }
