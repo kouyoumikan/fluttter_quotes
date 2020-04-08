@@ -11,7 +11,7 @@ class QuoteList extends StatefulWidget {
 
 class _QuoteListState extends State<QuoteList> {
 
-  List<String> quotes = [
+  List<String> quotes = [ // 引用テキストプロパティ
     "qwertyuioo",
     "asdfghjjkll",
     "zxcvbnm"
