@@ -10,6 +10,13 @@ class QuoteList extends StatefulWidget {
 }
 
 class _QuoteListState extends State<QuoteList> {
+
+  List<String> quotes = [
+    "qwertyyyyyyuioo",
+    "asdfghjjkll",
+    "zxcvbnm"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +25,11 @@ class _QuoteListState extends State<QuoteList> {
         title: Text("Awesome Quotes"),
         centerTitle: true,
         backgroundColor: Colors.redAccent,
+      ),
+      body: Column(
+        children: quotes.map((quote) { // マップを表示
+          return Text(quote);
+        }).toList(),
       ),
     );
   }
