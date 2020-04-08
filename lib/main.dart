@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'quote_card.dart';
 
 void main() => runApp(MaterialApp(
   home: QuoteList(),
@@ -18,10 +19,6 @@ class _QuoteListState extends State<QuoteList> {
     Quote (author: "oscar wilde", text: "zxcvbnm")
   ];
 
-  Widget quoteTemplate(quote){ // カードを作成するクラス
-    return QuoteCard(quote: quote);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,45 +29,8 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
+        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
       ),
     );
   }
 }
-
-class QuoteCard extends StatelessWidget {
-
-  final Quote quote;
-  QuoteCard({ this.quote });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Text(
-              quote.text,
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Colors.grey[600],
-              ),
-            ),
-            SizedBox(height: 6.0),
-            Text(
-              quote.text,
-              style: TextStyle(
-                fontSize: 14.0,
-                color: Colors.grey[800],
-              )
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
