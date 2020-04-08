@@ -24,11 +24,17 @@ class QuoteCard extends StatelessWidget {
             ),
             SizedBox(height: 6.0),
             Text(
-                quote.text,
+                quote.author,
                 style: TextStyle(
                   fontSize: 14.0,
                   color: Colors.grey[800],
                 )
+            ),
+            SizedBox(height: 8.0),
+            FlatButton.icon( // 削除アイコンボタン
+              onPressed: () {},
+              icon: Icon(Icons.delete),
+              label: Text("delete quote"),
             ),
           ],
         ),
